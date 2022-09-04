@@ -1,0 +1,47 @@
+// 1. Table zzt_emp_####
+@EndUserText.label : 'Table Employés'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zzt_emp_0001 {
+  key client            : abap.clnt not null;
+  key matricule         : abap.char(4) not null;
+  nom                   : abap.char(100);
+  prenom                : abap.char(100);
+  email                 : abap.char(100);
+  date_embauche         : abap.dats;
+  actif                 : abap_boolean;
+  last_changed_at       : timestampl;
+  local_last_changed_at : timestampl;
+
+}
+
+// 2. Table zzt_notes_####
+@EndUserText.label : 'Table des notes'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zzt_notes_#### {
+  key client    : abap.clnt not null;
+  key matricule : abap.char(4) not null;
+  key matiere   : abap.char(4) not null;
+  date_note     : abap.dats;
+  note          : abap.clnt;
+
+}
+
+// 3. Table zzt_matiere_####
+@EndUserText.label : 'Table des matières'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zzt_matiere_0001 {
+  key client    : abap.clnt not null;
+  key matiere   : abap.char(4) not null;
+  libelle_court : abap.char(100);
+  libelle_long  : abap.string(256);
+
+}
