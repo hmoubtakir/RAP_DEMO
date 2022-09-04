@@ -38,7 +38,7 @@ define table zzt_notes_#### {
 @AbapCatalog.tableCategory : #TRANSPARENT
 @AbapCatalog.deliveryClass : #A
 @AbapCatalog.dataMaintenance : #RESTRICTED
-define table zzt_matiere_0001 {
+define table zzt_matiere_#### {
   key client    : abap.clnt not null;
   key matiere   : abap.char(4) not null;
   libelle_court : abap.char(100);
