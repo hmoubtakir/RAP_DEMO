@@ -1,4 +1,4 @@
-CLASS zcl_data_generator_0001 DEFINITION
+CLASS zcl_data_generator_#### DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -11,13 +11,13 @@ ENDCLASS.
 
 
 
-CLASS zcl_data_generator_0001 IMPLEMENTATION.
+CLASS zcl_data_generator_#### IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
-    DATA : lt_mat  TYPE TABLE OF zzt_matiere_0001,
-           lt_emp  TYPE TABLE OF zzt_emp_0001,
-           lt_note TYPE TABLE OF zzt_notes_0001.
+    DATA : lt_mat  TYPE TABLE OF zzt_matiere_####,
+           lt_emp  TYPE TABLE OF zzt_emp_####,
+           lt_note TYPE TABLE OF zzt_notes_####.
 
-    DELETE FROM : zzt_matiere_0001, zzt_emp_0001, zzt_notes_0001.
+    DELETE FROM : zzt_matiere_####, zzt_emp_####, zzt_notes_####.
 
     APPEND VALUE #(  matiere   = 'FRAN'
       libelle_court =   'Français'
@@ -43,9 +43,9 @@ CLASS zcl_data_generator_0001 IMPLEMENTATION.
 
     APPEND VALUE #(
                     matricule = '0002'
-                    nom = 'MOUBTAKIR'
-                    prenom = 'Hassan'
-                    email = 'hassan.moubtakir@rte-france.com'
+                    nom = 'ELABAIDLA'
+                    prenom = 'MAELAYNINE'
+                    email = 'elabadila.maaelaynine@rte-france.com'
                     date_embauche = '20210101'
                     actif = abap_true
                     )
@@ -83,9 +83,9 @@ CLASS zcl_data_generator_0001 IMPLEMENTATION.
                 )
                 TO lt_note.
 
-    INSERT zzt_matiere_0001 FROM TABLE @lt_mat.
-    INSERT zzt_emp_0001 FROM TABLE @lt_emp.
-    INSERT zzt_notes_0001 FROM TABLE @lt_note.
+    INSERT zzt_matiere_#### FROM TABLE @lt_mat.
+    INSERT zzt_emp_#### FROM TABLE @lt_emp.
+    INSERT zzt_notes_#### FROM TABLE @lt_note.
 
     out->write( 'Génération des données terminée avec succès' ).
 
