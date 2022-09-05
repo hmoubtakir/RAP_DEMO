@@ -1,29 +1,29 @@
-// 1. Table zzt_emp_####
-@EndUserText.label : 'Table Employés'
+// 1. Table zzt_eleve_####
+@EndUserText.label : 'Table Elèves'
 @AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
 @AbapCatalog.tableCategory : #TRANSPARENT
 @AbapCatalog.deliveryClass : #A
 @AbapCatalog.dataMaintenance : #RESTRICTED
-define table zzt_emp_0001 {
+define table zzt_eleve_#### {
   key client            : abap.clnt not null;
   key matricule         : abap.char(4) not null;
   nom                   : abap.char(100);
   prenom                : abap.char(100);
   email                 : abap.char(100);
-  date_embauche         : abap.dats;
+  date_entree           : abap.dats;
   actif                 : abap_boolean;
   last_changed_at       : timestampl;
   local_last_changed_at : timestampl;
 
 }
 
-// 2. Table zzt_notes_####
+// 2. Table zzt_note_####
 @EndUserText.label : 'Table des notes'
 @AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
 @AbapCatalog.tableCategory : #TRANSPARENT
 @AbapCatalog.deliveryClass : #A
 @AbapCatalog.dataMaintenance : #RESTRICTED
-define table zzt_notes_#### {
+define table zzt_note_#### {
   key client    : abap.clnt not null;
   key matricule : abap.char(4) not null;
   key matiere   : abap.char(4) not null;
