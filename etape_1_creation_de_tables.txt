@@ -1,19 +1,17 @@
 // 1. Table zzt_eleve_####
-@EndUserText.label : 'Table Elèves'
+@EndUserText.label : 'Table des élèves'
 @AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
 @AbapCatalog.tableCategory : #TRANSPARENT
 @AbapCatalog.deliveryClass : #A
 @AbapCatalog.dataMaintenance : #RESTRICTED
 define table zzt_eleve_#### {
-  key client            : abap.clnt not null;
-  key matricule         : abap.char(4) not null;
-  nom                   : abap.char(100);
-  prenom                : abap.char(100);
-  email                 : abap.char(100);
-  date_entree           : abap.dats;
-  actif                 : abap_boolean;
-  last_changed_at       : timestampl;
-  local_last_changed_at : timestampl;
+  key client    : abap.clnt not null;
+  key matricule : abap.char(4) not null;
+  nom           : abap.char(100);
+  prenom        : abap.char(100);
+  email         : abap.char(100);
+  date_entree   : abap.dats;
+  actif         : abap_boolean;
 
 }
 
