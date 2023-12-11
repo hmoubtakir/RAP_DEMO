@@ -10,7 +10,6 @@ CLASS zcl_data_generator_#### DEFINITION
 ENDCLASS.
 
 
-
 CLASS zcl_data_generator_#### IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
     DATA : lt_mat  TYPE TABLE OF zzt_matiere_####,
