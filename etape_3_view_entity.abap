@@ -1,19 +1,19 @@
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'CDS View Entity for Eleve'
-@Metadata.allowExtensions: true
-define root view entity ZI_ELEVE_#### as select from zzt_eleve_#### 
-association [0..*] to ZI_NOTE_#### as _Note 
-on $projection.Matricule = _Note.Matricule
-{
-    key matricule as Matricule,
-    nom as Nom,
-    prenom as Prenom,
-    email as Email,
-    date_entree as DateEntree,
-    actif as Actif,
-    _Note
-}
+//---------------------------------------------------------------
 
+@AbapCatalog.viewEnhancementCategory: [#NONE]
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'CDS View Entity for Matiere'
+@Metadata.ignorePropagatedAnnotations: true
+@ObjectModel.usageType:{
+    serviceQuality: #X,
+    sizeCategory: #S,
+    dataClass: #MIXED
+}
+define view entity ZI_MATIERE_#### as select from zzt_matiere_#### {
+    key matiere as Matiere,
+    libelle_court as LibelleCourt,
+    libelle_long as LibelleLong
+}
 
 //---------------------------------------------------------------
 
@@ -42,17 +42,20 @@ on $projection.Matiere = _Matiere.Matiere {
 
 //---------------------------------------------------------------
 
-@AbapCatalog.viewEnhancementCategory: [#NONE]
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'CDS View Entity for Matiere'
-@Metadata.ignorePropagatedAnnotations: true
-@ObjectModel.usageType:{
-    serviceQuality: #X,
-    sizeCategory: #S,
-    dataClass: #MIXED
+@EndUserText.label: 'CDS View Entity for Eleve'
+@Metadata.allowExtensions: true
+define root view entity ZI_ELEVE_#### as select from zzt_eleve_#### 
+association [0..*] to ZI_NOTE_#### as _Note 
+on $projection.Matricule = _Note.Matricule
+{
+    key matricule as Matricule,
+    nom as Nom,
+    prenom as Prenom,
+    email as Email,
+    date_entree as DateEntree,
+    actif as Actif,
+    _Note
 }
-define view entity ZI_MATIERE_#### as select from zzt_matiere_#### {
-    key matiere as Matiere,
-    libelle_court as LibelleCourt,
-    libelle_long as LibelleLong
-}
+
+
