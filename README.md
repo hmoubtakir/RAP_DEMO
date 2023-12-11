@@ -10,3 +10,5 @@ Actions préiminaires à faire pour mener à bien le tutorial RAP DEMO.
 3.  Créer un package ZRAP_#### (#### étant le numéro qui vous a été attribué) sous le package ZLOCAL.
 
 4.  Ajouter le package ZRAP_#### à vos packages favoris.
+
+5.  Faire les exercices de toutes les étapes
