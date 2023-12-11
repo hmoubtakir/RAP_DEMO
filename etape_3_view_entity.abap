@@ -1,3 +1,4 @@
+Action : Clic droit sur la table concernée et choisir "New Data Definion" et dans la dernière étape de l'assistant choisir "DEFINE VIEW ENTITY"
 //---------------------------------------------------------------
 
 @AbapCatalog.viewEnhancementCategory: [#NONE]
