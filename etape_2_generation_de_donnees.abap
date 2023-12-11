@@ -14,46 +14,108 @@ ENDCLASS.
 CLASS zcl_data_generator_#### IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
     DATA : lt_mat  TYPE TABLE OF zzt_matiere_####,
-           lt_emp  TYPE TABLE OF zzt_eleve_####,
+           lt_ele  TYPE TABLE OF zzt_eleve_####,
            lt_note TYPE TABLE OF zzt_note_####.
+
+"---- Suppression des données existantes
 
     DELETE FROM : zzt_matiere_####, zzt_eleve_####, zzt_note_####.
 
-    APPEND VALUE #(  matiere   = 'FRAN'
-      libelle_court =   'Français'
-      libelle_long  =   'Langue Française'
+"---- Insertion des matières
+
+    APPEND VALUE #(  matiere   = '0001'
+      libelle_court =   'Chimie'
+      libelle_long  =   'Cours de Chimie'
       )
         TO lt_mat.
 
-    APPEND VALUE #(  matiere   = 'MATH'
-      libelle_court =   'Maths'
-      libelle_long  =   'Mathématiques'
+    APPEND VALUE #(  matiere   = '0002'
+      libelle_court =   'Mathématiques'
+      libelle_long  =   'Cours de Mathématiques'
       )
         TO lt_mat.
+
+    APPEND VALUE #(  matiere   = '0003'
+      libelle_court =   'Composition'
+      libelle_long  =   'Cours de Composition'
+      )
+        TO lt_mat.
+
+    APPEND VALUE #(  matiere   = '0004'
+      libelle_court =   'Litérature'
+      libelle_long  =   'Cours de Litérature'
+      )
+        TO lt_mat.
+
+    APPEND VALUE #(  matiere   = '0005'
+      libelle_court =   'Economie'
+      libelle_long  =   'Cours d''économie'
+      )
+        TO lt_mat.
+
+"---- Insertion des élèves
 
     APPEND VALUE #(
                     matricule = '0001'
-                    nom = 'MOUBTAKIR'
-                    prenom = 'Hassan'
-                    email = 'hassan.moubtakir@rte-france.com'
+                    nom = 'Norman'
+                    prenom = 'Laura'
+                    email = 'laura.norman@outlook.com'
                     date_entree = '20220304'
                     actif = abap_true
                     )
-                    TO lt_emp.
+                    TO lt_ele.
 
     APPEND VALUE #(
                     matricule = '0002'
-                    nom = 'ELABADILA'
-                    prenom = 'MAAELAYNINE'
-                    email = 'elabadila.maaelaynine@rte-france.com'
+                    nom = 'Fakhouri'
+                    prenom = 'Fadi'
+                    email = 'fadi.fakhouri@gmail.com'
                     date_entree = '20210101'
                     actif = abap_true
                     )
-                    TO lt_emp.
+                    TO lt_ele.
 
     APPEND VALUE #(
+                    matricule = '0003'
+                    nom = 'White'
+                    prenom = 'Anthony'
+                    email = 'anthony.white@gmail.com'
+                    date_entree = '20210101'
+                    actif = abap_true
+                    )
+                    TO lt_ele.
+    APPEND VALUE #(
+                    matricule = '0004'
+                    nom = 'Li'
+                    prenom = 'Yan'
+                    email = 'yan.li@gmail.com'
+                    date_entree = '20210101'
+                    actif = abap_true
+                    )
+                    TO lt_ele.
+
+    APPEND VALUE #(
+                    matricule = '0005'
+                    nom = 'Serrano'
+                    prenom = 'Alicia'
+                    email = 'alicia.serrano@gmail.com'
+                    date_entree = '20210101'
+                    actif = abap_false
+                    )
+                    TO lt_ele.
+    APPEND VALUE #(
+                    matricule = '0006'
+                    nom = 'Carson'
+                    prenom = 'Alexander'
+                    email = 'alexander.carson@gmail.com'
+                    date_entree = '20210101'
+                    actif = abap_false
+                    )
+                    TO lt_ele.
+"---- Insertion des notes
+    APPEND VALUE #(
                   matricule = '0001'
-                  matiere = 'FRAN'
+                  matiere = '0002'
                   date_note = '20220101'
                   note = 19
                 )
@@ -61,7 +123,7 @@ CLASS zcl_data_generator_#### IMPLEMENTATION.
 
     APPEND VALUE #(
                   matricule = '0001'
-                  matiere = 'MATH'
+                  matiere = '0005'
                   date_note = '20220101'
                   note = 13
                 )
@@ -69,7 +131,7 @@ CLASS zcl_data_generator_#### IMPLEMENTATION.
 
     APPEND VALUE #(
                   matricule = '0002'
-                  matiere = 'FRAN'
+                  matiere = '0002'
                   date_note = '20220101'
                   note = 15
                 )
@@ -77,18 +139,49 @@ CLASS zcl_data_generator_#### IMPLEMENTATION.
 
     APPEND VALUE #(
                   matricule = '0002'
-                  matiere = 'MATH'
+                  matiere = '0005'
                   date_note = '20220101'
                   note = 15
                 )
                 TO lt_note.
 
+    APPEND VALUE #(
+                  matricule = '0003'
+                  matiere = '0002'
+                  date_note = '20220101'
+                  note = 15
+                )
+                TO lt_note.
+
+    APPEND VALUE #(
+                  matricule = '0003'
+                  matiere = '0005'
+                  date_note = '20220101'
+                  note = 15
+                )
+                TO lt_note.
+    APPEND VALUE #(
+                  matricule = '0004'
+                  matiere = '0002'
+                  date_note = '20220101'
+                  note = 11
+                )
+                TO lt_note.
+
+    APPEND VALUE #(
+                  matricule = '0004'
+                  matiere = '0005'
+                  date_note = '20220101'
+                  note = 12
+                )
+                TO lt_note.
+
     INSERT zzt_matiere_#### FROM TABLE @lt_mat.
-    INSERT zzt_eleve_#### FROM TABLE @lt_emp.
+    INSERT zzt_eleve_#### FROM TABLE @lt_ele.
     INSERT zzt_note_#### FROM TABLE @lt_note.
 
-    out->write( 'Génération des données terminée avec succès' ).
-
+    COMMIT WORK.
+    out->write( 'Génération des données terminée avec succès (groupe ####)' ).
   ENDMETHOD.
 
 ENDCLASS.
