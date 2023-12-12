@@ -5,6 +5,7 @@ La fonction Draft et etag sont reliée.
 La fonction etag permet de gérer les accés concurrents ainsi que l'identification 
 de la version la plus à jour d'un objet de données. Pour ce faire on a besoin d'un champ qui permettra d'assurer cette fonction 
 1. Ajouter le champ locallastchangedat à votre table : zzt_eleve_####
+
 define table zzt_eleve_9999 {
   key client         : abap.clnt not null;
   key matricule      : abap.char(4) not null;
