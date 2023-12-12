@@ -1,4 +1,4 @@
-1-Metadata Extension pour ZI_ELEVE_####
+1-Metadata Extension ZI_ELEVE_#### (pour la view entity ZI_ELEVE_####)
 
 //----------------------------------------------------
 
@@ -49,7 +49,7 @@ annotate view ZI_ELEVE_####
     Actif;
 }
 
-2-Metadata Extension pour ZI_NOTE_####
+2-Metadata Extension ZI_NOTE_#### (pour la view Entity ZI_NOTE_####)
 
 //----------------------------------------------------
 
