@@ -5,7 +5,7 @@ Actions préiminaires à faire pour mener à bien le tutorial RAP DEMO.
 
 1.  Installer Eclipse et ADT au niveau de votre poste local.
 
-2.  Créer un projet ABAP dans ADT vers votre compte MSG
+2.  Créer un projet ABAP dans ADT vers votre compte MS4
 
 3.  Créer un package ZRAP_#### (#### étant le numéro qui vous a été attribué) sous le package ZLOCAL.
     Choisir une description pour votre pacjage (Package ZRAP_#### pour formation RAP)
