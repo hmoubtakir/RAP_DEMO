@@ -1,4 +1,5 @@
-Action : Clic droit sur la table concernée et choisir "New Data Definion" et dans la dernière étape de l'assistant choisir "DEFINE VIEW ENTITY"
+3.1 Création des "view Entity" pour chacne de nos tables
+    Action : Clic droit sur la table concernée et choisir "New Data Definion" et dans la dernière étape de l'assistant choisir "DEFINE VIEW ENTITY"
 //---------------------------------------------------------------
 
 @AbapCatalog.viewEnhancementCategory: [#NONE]
@@ -59,4 +60,22 @@ on $projection.Matricule = _Note.Matricule
     _Note
 }
 
+3.2 Création d'une "Project view" pour la view ZI_ELEVE_####
+Clic droit sur la "view entity" et choisir "New Data Definion" et dans la dernière étape de l'assistant (choix du type de l'entité choisir "Projection VIEW"
 
+@EndUserText.label: 'Projection view for Eleve'
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+define root view entity ZC_ELEVE_####
+provider contract transactional_query
+as projection on ZI_ELEVE_####
+{
+    key Matricule,
+    Nom,
+    Prenom,
+    Email,
+    DateEntree,
+    Actif,
+    locallastchangedat,
+    /* Associations */
+    _Note
+}
