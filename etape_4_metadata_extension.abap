@@ -45,7 +45,7 @@ annotate view ZI_ELEVE_####
     DateEntree;
     @UI.selectionField: [{ position: 60 }]
     @UI.lineItem: [{ position: 60, label: 'Actif ?' }]
-    @UI.identification: [{ position: 50, label: 'Actif ?' }]
+    @UI.identification: [{ position: 60, label: 'Actif ?' }]
     Actif;
 }
 
