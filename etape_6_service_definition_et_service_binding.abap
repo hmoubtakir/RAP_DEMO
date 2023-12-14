@@ -3,7 +3,7 @@
 //-----------------------------------------------------
 @EndUserText.label: 'Service Definition for Eleve'
 define service ZUI_ELEVE_#### {
-  expose ZC_ELEVE_#### as Eleve;
+  expose ZI_ELEVE_#### as Eleve;
   expose ZI_NOTE_#### as Note;
   expose ZI_MATIERE_#### as Matiere;
 }
