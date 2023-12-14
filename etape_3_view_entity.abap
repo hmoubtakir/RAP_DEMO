@@ -75,7 +75,6 @@ as projection on ZI_ELEVE_####
     Email,
     DateEntree,
     Actif,
-    locallastchangedat,
     /* Associations */
     _Note
 }
