@@ -1,4 +1,4 @@
-1- Service Definition, à partir de la "Projection view" ZC_ELEVE_#### choisir create Service Definition
+1- Service Definition, à partir de la "view Entity" ZC_ELEVE_#### choisir create Service Definition
 
 //-----------------------------------------------------
 @EndUserText.label: 'Service Definition for Eleve'
